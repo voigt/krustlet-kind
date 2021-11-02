@@ -13,7 +13,7 @@ docker build --no-cache . -t kindest/node:1.21.1-krustlet-v1.0.0-alpha.1
 Create Cluster:
 
 ```bash
-kind create cluster --config=examples/kind.yaml --name=kruste
+./init_krustlet.sh
 ```
 
 Test
