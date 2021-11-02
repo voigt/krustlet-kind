@@ -1,5 +1,7 @@
 # Krustlet in Docker
 
+This is a (hacky) proof of concept to spawn a krustlet within [KIND](https://kind.sigs.k8s.io/).
+
 ## How to use
 
 Build Krustlet Node Image:
