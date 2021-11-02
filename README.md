@@ -2,14 +2,27 @@
 
 ## How to use
 
+Build Krustlet Node Image:
+
 ```bash
-kind create cluster --config=kind.yaml --name=kruste
+docker build --no-cache . -t kindest/node:1.21.1-krustlet-v1.0.0-alpha.1
 ```
 
+Create Cluster:
 
-## Handling
+```bash
+kind create cluster --config=examples/kind.yaml --name=kruste
+```
 
-get first worker
+Test
+
+```bash
+kubectl apply -f examples/test_workload_1.yaml
+```
+
+## Hack
+
+Get first worker
 
 ```bash
 docker exec -it $(docker ps --format "{{.ID}}" -f name="worker2" | tail -n1) /bin/bash
@@ -19,4 +32,4 @@ Start image without kind
 ```
 $ docker run -it -d \
     --entrypoint='/bin/bash' \
-    kindest/node:1.21.1-krustlet-v1.0.0-alpha.1-systemd
+    kindest/node:1.21.1-krustlet-v1.0.0-alpha.1

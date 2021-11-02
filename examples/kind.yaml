@@ -6,7 +6,7 @@ nodes:
 - role: worker
   image: kindest/node:v1.21.1
 - role: worker
-  image: kindest/node:1.21.1-krustlet-v1.0.0-alpha.1-systemd
+  image: kindest/node:1.21.1-krustlet-v1.0.0-alpha.1
   kubeadmConfigPatches:
   - |
     kind: JoinConfiguration
