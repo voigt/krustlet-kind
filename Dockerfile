@@ -40,10 +40,7 @@ RUN echo "Installing Krustlet ..." \
     # && systemctl start krustlet
     # TODO:
     # - create (and enable) systemd task that starts a
-    # - script which checks if its running on API-Server (if on API server, patch kube-proxy!); if its not running on api server, then
-    # - systemctl disable kubelet
-    # - and
-    # - systemctl start krustlet
+    # - script which checks if its running on API-Server (if on API server, patch kube-proxy!); if its not running on api server
 
 
 # KUBECONFIG=~/.krustlet/config/kubeconfig krustlet-wasi --node-ip $(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1) --bootstrap-file=~/.krustlet/config/bootstrap.conf
